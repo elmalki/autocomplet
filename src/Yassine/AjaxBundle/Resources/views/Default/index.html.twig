@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<div class="container">
+<div class="row span10 offset2">
+        <div class="col col-lg-4 col-offset-2">
+            <input type="text" name="name" id="name" class="form-control" value="">
+        </div>
+        <div class="col col-lg-1" id="loading"></div>
+    </div>
+    <div id="names"></div>
+</div>
+{% endblock %}
+{% block javascripts %}
+{{parent()}}
+<script type="text/javascript">
+    $(function() {
+        alert();
+        $('#name').keyup(function(event) {
+            var val = $(this).val();
+            if ($(this).val().length>0) {
+                $.ajax({
+                  type: "POST",
+                  url: '{{path('Yassine_ajax_ajaxcall')}}',
+                  data: 'token='+val,
+
+                  beforeSend:function(event, position, total, percentComplete){
+                    $('#names').html('');
+                    $('#loading').html('<h3>Loading</h3>');
+                },
+                success:function(html){
+                   $('#loading').html('');
+                   $('#names').html(html);
+
+               }
+           },"json");
+            }else{
+                $('#names').html('');
+            }
+        });
+    });
+</script>
+{% endblock %}

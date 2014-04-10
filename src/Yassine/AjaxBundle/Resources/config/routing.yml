@@ -1,0 +1,6 @@
+yassine_ajax_homepage:
+    pattern:  /index
+    defaults: { _controller: MedAjaxBundle:Default:index }
+yassine_ajax_ajaxcall:
+    pattern: /data/from/ajax/call
+    defaults: {_controller: MedAjaxBundle:Default:ajax }

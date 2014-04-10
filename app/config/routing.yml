@@ -1,0 +1,4 @@
+Yassine_ajax:
+    resource: "@YassineAjaxBundle/Resources/config/routing.yml"
+    prefix:   /
+

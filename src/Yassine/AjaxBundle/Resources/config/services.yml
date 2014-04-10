@@ -1,0 +1,7 @@
+parameters:
+#    Yassine_ajax.example.class: Yassine\AjaxBundle\Example
+
+services:
+#    Yassine_ajax.example:
+#        class: %Yassine_ajax.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
