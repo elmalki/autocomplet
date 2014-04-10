@@ -20,7 +20,7 @@ class DefaultController extends Controller
           ->where( $qb->expr()->like('p.name', $qb->expr()->literal('%' . $request->request->get('token') . '%')) )
           ->getQuery()
           ->getResult();
-          $html = '';
+          $html = ' ';
         foreach ($personnes as $personne) {
             $html .= $personne->getName().'<br />';
         }
